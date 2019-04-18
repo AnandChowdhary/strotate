@@ -1,17 +1,5 @@
-import { Typerface } from "./interfaces";
-import { random } from "./random";
-import "./styles/index.scss";
+const rot13 = () => "a";
 
-export default class strotate implements Typerface {
-  value: string;
-  constructor(el?: string) {
-    this.value = random();
-    const valueElement: HTMLElement | null = document.querySelector(
-      el || "strong"
-    );
-    if (valueElement) valueElement.innerHTML = this.value;
-    console.log("The random value is", this.value);
-  }
-}
+export { rot13 };
 
-(<any>window).strotate = strotate;
+if (window) (<any>window).strotate = { rot13 };
